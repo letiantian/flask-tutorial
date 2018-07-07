@@ -27,7 +27,7 @@ def hello_world():
 @app.route('/page/<my_int:num>')
 def page(num):
     print(num)
-    print(url_for('page', num='123'))   # page 对应的是/page 路径 ，num 对应 /page/ 后的页码数，必须是str
+    print(url_for('page', num=123))   # page 对应的是 page函数 ，num 对应对应`/page/<my_int:num>`中的num，必须是str
     return 'hello world'
 
 
