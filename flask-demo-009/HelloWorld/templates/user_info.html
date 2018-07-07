@@ -1,0 +1,9 @@
+{% extends "default.html" %}
+
+{% block body %}
+    {% for key in user_info %}
+
+        {{ key }}: {{ user_info[key] }} <br/>
+
+    {% endfor %}
+{% endblock %}
