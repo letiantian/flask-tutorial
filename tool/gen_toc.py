@@ -9,4 +9,4 @@ articles = [item for item in os.listdir(article_dir_path)]
 articles.sort()
 for file_name in articles:
     # print(file_name)
-    print('* [{}]({})  '.format(file_name[0:-3], urllib.parse.quote(file_name)))
+    print('* [{}](article/{})  '.format(file_name[0:-3], urllib.parse.quote(file_name)))
