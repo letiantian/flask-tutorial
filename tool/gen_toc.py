@@ -5,7 +5,7 @@ ARTICLE = 'article'
 dir_path = os.path.dirname(os.path.realpath(__file__))
 article_dir_path = os.path.join(dir_path, '..', ARTICLE)
 
-articles = [item for item in os.listdir(article_dir_path)]
+articles = [item for item in os.listdir(article_dir_path) if item.endswith('.md')]
 articles.sort()
 for file_name in articles:
     # print(file_name)

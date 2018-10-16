@@ -20,7 +20,7 @@ Flask 是一个轻量级的基于 Python 的 Web 框架，简单易用，适合�
 * [013. 用户会话](article/013.%20%E7%94%A8%E6%88%B7%E4%BC%9A%E8%AF%9D.md)
 * [014. 使用Cookie](article/014.%20%E4%BD%BF%E7%94%A8Cookie.md)
 * [015. 闪存系统 flashing system](article/015.%20%E9%97%AA%E5%AD%98%E7%B3%BB%E7%BB%9F%20flashing%20system.md)
-* [016. 值得读](article/016.%20%E5%80%BC%E5%BE%97%E8%AF%BB.md)  
+* [016. 值得读](article/016.%20%E5%80%BC%E5%BE%97%E8%AF%BB.md)
 
 ### 关于
 * [我的博客](http://www.letiantian.me/)
