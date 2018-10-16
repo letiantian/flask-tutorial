@@ -7,7 +7,7 @@ Flask 是一个轻量级的基于 Python 的 Web 框架，简单易用，适合�
 ### 目录
 * [001. 简介](article/001.%20%E7%AE%80%E4%BB%8B.md)
 * [002. 安装](article/002.%20%E5%AE%89%E8%A3%85.md)
-* [003. 从 Hello World 开始.](article/003.%20%E4%BB%8E%20Hello%20World%20%E5%BC%80%E5%A7%8B.md%20)
+* [003. 从 Hello World 开始](article/003.%20%E4%BB%8E%20Hello%20World%20%E5%BC%80%E5%A7%8B.md)
 * [004. 获取 URL 参数](article/004.%20%E8%8E%B7%E5%8F%96%20URL%20%E5%8F%82%E6%95%B0.md)
 * [005. 获取POST方法传送的数据](article/005.%20%E8%8E%B7%E5%8F%96POST%E6%96%B9%E6%B3%95%E4%BC%A0%E9%80%81%E7%9A%84%E6%95%B0%E6%8D%AE.md)
 * [006. 处理和响应JSON数据](article/006.%20%E5%A4%84%E7%90%86%E5%92%8C%E5%93%8D%E5%BA%94JSON%E6%95%B0%E6%8D%AE.md)
