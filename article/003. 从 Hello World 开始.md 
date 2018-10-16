@@ -1,0 +1,90 @@
+# 003. 从 Hello World 开始
+
+本节主要内容：使用Flask写一个显示"Hello World!"的web程序，如何配置、调试Flask。
+
+
+### 3.1 Hello World
+
+按照以下命令建立Flask项目HelloWorld:
+```plain
+mkdir HelloWorld
+mkdir HelloWorld/static
+mkdir HelloWorld/templates
+touch HelloWorld/server.py
+```
+`static`和`templates`目录是默认配置，其中`static`用来存放静态资源，例如图片、js、css文件等。`templates`存放模板文件。
+我们的网站逻辑基本在`server.py`文件中，当然，也可以给这个文件起其他的名字。
+
+在`server.py`中加入以下内容：
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+
+if __name__ == '__main__':
+    app.run()
+```
+运行`server.py`：
+```
+$ python3 server.py 
+ * Running on http://127.0.0.1:5000/
+```
+打开浏览器访问`http://127.0.0.1:5000/`，浏览页面上将出现`Hello World!`。
+终端里会显示下面的信息：
+```
+127.0.0.1 - - [16/May/2014 10:29:08] "GET / HTTP/1.1" 200 -
+```
+变量app是一个Flask实例，通过下面的方式：
+```python
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+```
+当客户端访问`/`时，将响应`hello_world()`函数返回的内容。注意，这不是返回`Hello World!`这么简单，`Hello World!`只是HTTP响应报文的实体部分，状态码等信息既可以由Flask自动处理，也可以通过编程来制定。
+
+### 3.2 修改Flask的配置
+
+```python
+app = Flask(__name__)
+```
+上面的代码中，python内置变量`__name__`的值是字符串`__main__` 。Flask类将这个参数作为程序名称。当然这个是可以自定义的，比如`app = Flask("my-app")`。
+
+Flask默认使用`static`目录存放静态资源，`templates`目录存放模板，这是可以通过设置参数更改的：
+```
+app = Flask("my-app", static_folder="path1", template_folder="path2")
+```
+
+更多参数请参考`__doc__`：
+```python
+from flask import Flask
+print(Flask.__doc__)
+```
+
+
+### 3.3 调试模式
+
+上面的server.py中以`app.run()`方式运行，这种方式下，如果服务器端出现错误是不会在客户端显示的。但是在开发环境中，显示错误信息是很有必要的，要显示错误信息，应该以下面的方式运行Flask：
+```python
+app.run(debug=True)
+```
+将`debug`设置为`True`的另一个好处是，程序启动后，会自动检测源码是否发生变化，若有变化则自动重启程序。这可以帮我们省下很多时间。
+
+### 3.4 绑定IP和端口
+
+默认情况下，Flask绑定IP为`127.0.0.1`，端口为`5000`。我们也可以通过下面的方式自定义：
+```python
+app.run(host='0.0.0.0', port=80, debug=True)
+```
+`0.0.0.0`代表电脑所有的IP。`80`是HTTP网站服务的默认端口。什么是默认？比如，我们访问网站`http://www.example.com`，其实是访问的`http://www.example.com:80`，只不过`:80`可以省略不写。
+
+由于绑定了80端口，需要使用root权限运行`server.py`。也就是：
+```
+$ sudo python3 server.py
+```
+
+### 3.5 本节源码
+https://github.com/letiantian/flask-tutorial/tree/master/demo/flask-demo-001
